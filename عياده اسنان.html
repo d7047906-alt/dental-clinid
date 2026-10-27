@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيادة ابتسامة النور لطب وجراحة الأسنان</title>
+    <!-- خط تجوالي من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --accent: #f59e0b;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            background: radial-gradient(circle at top right, #e0f2fe 0%, #f8fafc 60%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Statistics Bar Section (شريط الإحصائيات) */
+        .stats-bar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            color: var(--accent);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-body {
+            padding: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-dark);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Video Section (قسم الفيديو) */
+        .video-section {
+            background: var(--white);
+            padding: 5rem 2rem;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* نسبة العرض للارتفاع 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            margin-top: 2rem;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Before & After Gallery (قبل وبعد) */
+        .gallery {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gallery-card h4 {
+            padding: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Booking Section */
+        .booking-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .booking-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .booking-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .info-list li span {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .booking-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #f1f5f9;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-light);
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container, .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>✦</span> ابتسامة النور
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#video">جولة بالعيادة</a></li>
+                <li><a href="#gallery">نتائجنا</a></li>
+                <li><a href="#booking">حجز موعد</a></li>
+            </ul>
+            <a href="#booking" class="btn-primary">احجز الآن</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge">عيادة طب أسنان متخصصة</span>
+                <h1>ابتسامتك المشرقة والصحية <span>تبدأ من هنا</span></h1>
+                <p>نوفر لك ولعائلتك أحدث تقنيات طب الأسنان بأعلى مستويات الراحة والأمان، تحت إشراف نخبة من أكفأ الأطباء.</p>
+                <a href="#booking" class="btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2rem;">احجز استشارتك الآن</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="طبيب أسنان في العيادة">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Bar Section (شريط الإحصائيات) -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>+5000</h3>
+                <p>مريض سعيد</p>
+            </div>
+            <div class="stat-item">
+                <h3>+12</h3>
+                <p>سنة خبرة</p>
+            </div>
+            <div class="stat-item">
+                <h3>8</h3>
+                <p>أطباء استشاريين</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>تعقيم وآمان</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (مع صور الخدمات) -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>خدماتنا الطبية</h2>
+            <p>نقدم مجموعة شاملة من خدمات العناية بالأسنان والتجميل</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="تبييض الأسنان">
+                <div class="service-card-body">
+                    <h3>تبييض الأسنان بالليزر</h3>
+                    <p>استمتع بابتسامة ناصعة البياض في جلسة واحدة فقط باستخدام تقنيات تبييض آمنة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="زراعة الأسنان">
+                <div class="service-card-body">
+                    <h3>زراعة الأسنان المتقدمة</h3>
+                    <p>استرجع وظيفة أسنانك ومظهرها الطبيعي بأفضل أنواع الغرسات الطبية.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="تقويم الأسنان">
+                <div class="service-card-body">
+                    <h3>تقويم الأسنان الشفاف</h3>
+                    <p>حلول تقويمية متطورة وغير مرئية لتعديل محاذاة الأسنان بكل سهولة وراحة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tour Section (قسم الفيديو التعريفي) -->
+    <section id="video" class="video-section">
+        <div class="video-container">
+            <div class="section-header">
+                <h2>جولة داخل العيادة</h2>
+                <p>تعرف على أحدث الأجهزة والتجهيزات الطبية لضمان راحتك</p>
+            </div>
+            <div class="video-wrapper">
+                <!-- فيديو توضيحي من YouTube -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="فيديو تعريفي للعيادة" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery (معرض صور قبل وبعد) -->
+    <section id="gallery" class="gallery">
+        <div class="section-header">
+            <h2>نتائج العلاج (قبل وبعد)</h2>
+            <p>نماذج واقعية من ابتسامات مراجعينا بعد العلاج</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=600&q=80" alt="تجميل الابتسامة">
+                <h4>نتيجة تجميل الابتسامة</h4>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="تبييض الأسنان">
+                <h4>نتيجة تبييض الأسنان</h4>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&q=80" alt="تركيب التقويم">
+                <h4>نتيجة التقويم الشفاف</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="booking-container">
+            <div class="booking-info">
+                <h2>جاهز للحصول على ابتسامة أحلامك؟</h2>
+                <p>قم بتعبئة النموذج وسيقوم فريق الاستقبال بالتواصل معك فوراً لتأكيد موعدك المناسب.</p>
+                <ul class="info-list">
+                    <li><span>📍</span> العنوان: مكة المكرمة - الشارع العام</li>
+                    <li><span>📞</span> الهاتف: 0123456789</li>
+                    <li><span>⏰</span> أوقات العمل: السبت - الخميس (9 صباحاً - 9 مساءً)</li>
+                </ul>
+            </div>
+            
+            <div class="booking-card">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem; text-align: center;">حجز موعد جديد</h3>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="fullName">الاسم بالكامل</label>
+                        <input type="text" id="fullName" placeholder="أدخل اسمك الكريم" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNum">رقم الجوال</label>
+                        <input type="tel" id="phoneNum" placeholder="05xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">اختر الخدمة المطلوبة</label>
+                        <select id="serviceType" required>
+                            <option value="" disabled selected>اختر الخدمة...</option>
+                            <option value="whitening">تبييض الأسنان</option>
+                            <option value="implant">زراعة الأسنان</option>
+                            <option value="ortho">تقويم الأسنان</option>
+                            <option value="checkup">فحص واستشارة عامة</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 0.9rem;">تأكيد الحجز الآن</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 <strong>عيادة ابتسامة النور</strong></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNum').value;
+            const service = document.getElementById('serviceType').options[document.getElementById('serviceType').selectedIndex].text;
+
+            alert(`أهلاً بك يا ${name}!\nتم استقبال طلب حجزك لخدمة (${service}) بنجاح.\nسنتواصل معك على الرقم (${phone}) في أقرب وقت لتأكيد الموعد.`);
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
